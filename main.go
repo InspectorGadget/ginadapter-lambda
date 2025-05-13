@@ -20,7 +20,7 @@ func setupRouter() *gin.Engine {
 	r := gin.Default()
 	r.Use(middlewares.APIGatewayContextMiddleware())
 
-	r.GET("/hello", func(c *gin.Context) {
+	r.GET("/", func(c *gin.Context) {
 		event, exists := middlewares.GetAPIGatewayEvent(c)
 		if exists {
 			c.JSON(
