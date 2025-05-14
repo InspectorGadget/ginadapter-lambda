@@ -20,7 +20,13 @@ GinAdapter Lambda implemented AWS Lambda Go API Proxy integration for Gin framew
     go mod tidy
     ```
 
-3. Deploy the Lambda function:
-    ```bash
-    make create-function
-    ```
+3. Install [GoZapGin](https://github.com/InspectorGadget/gozapgin-cli) on your Machine, or download the binaries directly to the deployment folder.
+4. Initialize GoZapGin on the directory
+```bash
+./gozapgin init --bucket gozapgin-deployment --name ginadapter-lambda --stage production
+```
+
+5. Deploy using GoZapGin
+```bash
+./gozapgin deploy --stage production
+```
